@@ -7,10 +7,32 @@
     <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   </head>
   <body>
-    <div id="wrapper">
-      <div class="navbar">
-        <button type="button" class="btn btn-primary">huh?</button>
-      </div>
+    <div class="container-fluid">
+      <form action = "{{ url_for('results') }}" method = "post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type=text class="form-control" name="name" placeholder="First Last">
+          <small id="emailHelp" class="form-text text-muted">This is going to break your heart.</small>
+          <label for="dojo">Dojo Location:</label>
+            <select class="form-control">
+              <option value="sj">San Jose</option>
+              <option value="la">Los Angeles</option>
+              <option value="houston">Houston</option>
+              <option value="dojo_south">McMurdo Station, Ross Ice Shelf, Antarctica</option>
+            </select>
+          <label for="location">Favorite Language:</label>
+            <select class="form-control">
+              <option value="klingon">Klingon</option>
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+              <option value="penguin">Penguin</option>
+            </select>
+          <label for="comment">Comment:</label>
+          <textarea class="form-control" id="comment" rows="5"></textarea>
+        </div>
+        <input type="submit" value="submit" class="btn btn-primary"></input>
+      </form>
     </div>
+    <p> {{ name }} </p>
   </body>
 </html>
